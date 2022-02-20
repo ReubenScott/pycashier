@@ -3,8 +3,8 @@
 
 import sys
 import time
-import Tkinter as tk
-import ttk
+import tkinter as tk
+import tkinter.ttk as ttk
 import re
 import agent.payagent
 
@@ -392,7 +392,7 @@ class OrderBox(tk.Frame):
     
   def onDBClick(self, event):
       item = tree.selection()[0]
-      print "you clicked on ", tree.item(item, "values")
+      print("you clicked on ", tree.item(item, "values"))
       
   # 鼠标 滚轮    
   def OnMouseWheel(self, event):
@@ -445,14 +445,14 @@ class EntryPage(tk.Frame):
     if rs != None:
 
       for key,value in rs :       # 遍历键值对
-        print key,':',value
+        print(key,':',value)
         item_no = value if 'barcode' in rs else "";
         
       # 商品编号 商品名称 单位 规格 零售价 会员价 折扣
-      print goods['barcode'], goods['title'], goods['unit'], goods['specs'], goods['salePrice'], goods['memberPrice'], 1.0
+      print(goods['barcode'], goods['title'], goods['unit'], goods['specs'], goods['salePrice'], goods['memberPrice'], 1.0)
       
       item_no, item_code, item_name, in_price, sale_price, member_price , discount = rs
-      print  item_no, item_code, item_name, in_price, sale_price, member_price, discount 
+      print( item_no, item_code, item_name, in_price, sale_price, member_price, discount )
       # 添加成功清除条形码
       #self.goods_code.set("")
       sheet = spreadsheet.get_children()
